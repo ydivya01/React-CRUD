@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams , useNavigate } from "react-router-dom";
+import { useParams , useNavigate, Link } from "react-router-dom";
 
 const View = () => {
  
@@ -32,7 +32,7 @@ const View = () => {
   };
 
   const loadUser =  () => {
-   axios.get('https://649c087004807571923757eb.mockapi.io/CRUD/' + id)
+   axios.get('https://649c087004807571923757eb.mockapi.io/Users/' + id)
    .then((res)=>setInputData(res.data))
    .catch((err)=> console.log(err))
 
@@ -42,7 +42,9 @@ const View = () => {
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="text-center mb-4">VIEW</h2>
-        <form onSubmit={handleSubmit}>
+        <form 
+        // onSubmit={handleSubmit}
+        >
           <div className="form-group" >
            NAME <input
               type="text"
@@ -93,7 +95,9 @@ const View = () => {
            
             />
           </div>
-          <button className="btn btn-warning btn-block">Back</button>
+          <Link to='/'>
+          <button className="btn btn-warning btn-block">Back</button></Link>
+          
         </form>
       </div>
     </div>

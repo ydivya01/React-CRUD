@@ -10,13 +10,13 @@ useEffect(() => {
   }, []);
 
   const loadUsers =  () => {
-     axios.get("https://649c087004807571923757eb.mockapi.io/CRUD")
+     axios.get("https://649c087004807571923757eb.mockapi.io/Users")
      .then((res)=>   setUsers(res.data))
      .catch(err => console.log(err))
   }
 
   const deleteUser = async id => {
-    await axios.delete(`https://649c087004807571923757eb.mockapi.io/CRUD/${id}`);
+    await axios.delete(`https://649c087004807571923757eb.mockapi.io/Users/${id}`);
     loadUsers();
   };
 

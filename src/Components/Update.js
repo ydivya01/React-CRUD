@@ -23,7 +23,7 @@ const Update = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put("https://649c087004807571923757eb.mockapi.io/CRUD/"  + id, inputData)
+    axios.put("https://649c087004807571923757eb.mockapi.io/Users/"  + id, inputData)
     .then((res)=>{
         alert('Data updated successfully')
         navigate('/')
@@ -32,7 +32,7 @@ const Update = () => {
   };
 
   const loadUser =  () => {
-   axios.get('https://649c087004807571923757eb.mockapi.io/CRUD/' + id)
+   axios.get('https://649c087004807571923757eb.mockapi.io/Users/' + id)
    .then((res)=>setInputData(res.data))
    .catch((err)=> console.log(err))
 

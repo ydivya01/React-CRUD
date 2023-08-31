@@ -21,7 +21,7 @@ const Create = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("https://649c087004807571923757eb.mockapi.io/CRUD", user)
+    axios.post("https://649c087004807571923757eb.mockapi.io/Users", user)
     .then((res)=>{
         alert('Data created successfully')
         navigate('/')
